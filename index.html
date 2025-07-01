@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Deletion Request – DVText</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #555;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #2b7bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1f65d0;
+    }
+    .footer {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Request Account Deletion</h1>
+    <p>Please enter the email address associated with your DVText – Text Reader (TTS) account. We will process your deletion request as soon as possible.</p>
+    <form onsubmit="sendEmail(); return false;">
+      <input type="email" id="email" required placeholder="Your email address" />
+      <button type="submit">Send Request</button>
+    </form>
+    <div class="footer">
+      For any issues, contact us at <br><a href="mailto:comidvtech@gmail.com">comidvtech@gmail.com</a>
+    </div>
+  </div>
+
+  <script>
+    function sendEmail() {
+      const email = document.getElementById('email').value.trim();
+      if (!email) return;
+      const subject = encodeURIComponent("Account Deletion Request");
+      const body = encodeURIComponent(`Hello,\n\nI would like to request deletion of my account associated with the email: ${email}.\n\nThank you.`);
+      const mailtoLink = `mailto:comidvtech@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+    }
+  </script>
+</body>
+</html>
