@@ -1,91 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Account Deletion Request – DVText</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 100%;
-    }
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #333;
-    }
-    p {
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #555;
-    }
-    input[type="email"] {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      background-color: #2b7bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1f65d0;
-    }
-    .footer {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Request Account Deletion</h1>
-    <p>Please enter the email address associated with your DVText – Text Reader (TTS) account. We will process your deletion request as soon as possible.</p>
-    <form onsubmit="sendEmail(); return false;">
-      <input type="email" id="email" required placeholder="Your email address" />
-      <button type="submit">Send Request</button>
-    </form>
-    <div class="footer">
-      For any issues, contact us at <br><a href="mailto:comidvtech@gmail.com">comidvtech@gmail.com</a>
-    </div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DVText – Account Deletion Request</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #111;
+      }
+      header {
+        background-color: #2196f3;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px 20px;
+      }
+      h2 {
+        color: #1877f2;
+        margin-top: 40px;
+      }
+      p {
+        line-height: 1.6;
+      }
+      .warning {
+        background-color: #fff3cd;
+        border-left: 6px solid #ffc107;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+      .cta {
+        text-align: center;
+        margin: 40px 0;
+      }
+      .cta a {
+        display: inline-block;
+        background-color: #2196f3;
+        color: white;
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #e0e0e0;
+        font-size: 0.9rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>DVText – Account & Data Deletion</h1>
+    </header>
 
-  <script>
-    function sendEmail() {
-      const email = document.getElementById('email').value.trim();
-      if (!email) return;
-      const subject = encodeURIComponent("Account Deletion Request");
-      const body = encodeURIComponent(`Hello,\n\nI would like to request deletion of my account associated with the email: ${email}.\n\nThank you.`);
-      const mailtoLink = `mailto:comidvtech@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
-    }
-  </script>
-</body>
+    <div class="container">
+      <p>
+        If you would like to request the deletion of your DVText account or
+        related data, you may do so by choosing one of the options below. This
+        action is manual and will be processed via email.
+      </p>
+
+      <div class="warning">
+        <h2>⚠️ Important Notice</h2>
+        <p>By submitting a deletion request, you understand and agree that:</p>
+        <ul>
+          <li>
+            Deleting your <strong>account</strong> will permanently remove your
+            email, subscription history, and associated device ID.
+          </li>
+          <li>
+            Deleting your <strong>data</strong> will remove all records linked
+            to your usage, excluding your account credentials.
+          </li>
+          <li>
+            These actions are <strong>irreversible</strong> and may affect your
+            ability to use DVText features, including access to premium
+            subscriptions.
+          </li>
+          <li>
+            We do not store any personal data from the built-in browser or typed
+            content.
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <a
+          href="mailto:comidvtech@gmail.com?subject=Request to Delete My DVText Account&body=Hello,%0D%0A%0D%0AI would like to request the deletion of my DVText account associated with this email address.%0D%0A%0D%0AReason for deletion: [Please specify]%0D%0A%0D%0AI understand that this action is irreversible and I accept all associated risks.%0D%0A%0D%0AThank you.%0D%0A"
+          >Request Account Deletion</a
+        >
+        <a
+          href="mailto:comidvtech@gmail.com?subject=Request to Delete My DVText Data&body=Hello,%0D%0A%0D%0AI would like to request the deletion of all personal and usage data associated with my DVText account.%0D%0A%0D%0AReason for deletion: [Please specify]%0D%0A%0D%0AI understand that this action is irreversible and I accept all associated risks.%0D%0A%0D%0AThank you.%0D%0A"
+          >Request Data Deletion</a
+        >
+      </div>
+
+      <p>
+        If you have any questions or need assistance, please contact us at
+        <a href="mailto:comidvtech@gmail.com">comidvtech@gmail.com</a>.
+      </p>
+    </div>
+
+    <footer>&copy; 2025 DVText. All rights reserved.</footer>
+  </body>
 </html>
